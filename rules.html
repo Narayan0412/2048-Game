@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game Rules</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            margin: 0;
+            padding: 20px;
+            background-image: url("./polygon-scatter-haikei\ \(1\).svg");
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ecf0f1 ;
+            border-radius: 10px;
+            
+        }
+        h1 {
+            text-align: center;
+            color: #2980b9;
+        }
+        h2 {
+            color: #16a085;
+        }
+        ul {
+            line-height: 1.6;
+        }
+        .example {
+            background-color: #bdc3c7;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2048 Game Rules</h1>
+        <h2>Objective</h2>
+        <p>The goal of 2048 is to combine numbered tiles on a grid to create a High Score.</p>
+        
+        <h2>Game Setup</h2>
+        <ul>
+            <li>The game is played on a 4x4 grid.</li>
+            <li>At the start, two tiles are randomly placed on the grid, each with a value of either 2 or 4.</li>
+        </ul>
+
+        <h2>How to Play</h2>
+        <ul>
+            <li><strong>Move Tiles:</strong> You can slide all the tiles on the grid up, down, left, or right.
+                <ul>
+                    <li>Use the arrow keys on your keyboard for desktop play.</li>
+                    <li>Swipe gestures are used for mobile play.</li>
+                </ul>
+            </li>
+            <li><strong>Combine Tiles:</strong> When two tiles with the same number collide while moving, they merge into one tile with the sum of the numbers of the two original tiles (e.g., 2 + 2 = 4, 4 + 4 = 8, and so on).</li>
+            <li><strong>Spawn New Tiles:</strong> After each move, a new tile with a value of either 2 or 4 randomly appears on an empty spot on the grid.</li>
+        </ul>
+
+        <h2>Winning the Game</h2>
+        <p>Try to beat the High Score.</p>
+
+        <h2>Game Over</h2>
+        <p>The game is over when there are no empty spots on the grid and no possible moves left to combine tiles.</p>
+
+        <h2>Additional Rules</h2>
+        <ul>
+            <li><strong>No Partial Moves:</strong> All tiles slide as far as possible in the chosen direction until they either hit the edge of the grid or another tile.</li>
+            <li><strong>No Backtracking:</strong> Once you make a move, you cannot undo it.</li>
+            <li><strong>Score:</strong> The score is the sum of the values of the tiles combined during the moves.</li>
+        </ul>
+
+        <h2>Strategies</h2>
+        <ul>
+            <li><strong>Plan Ahead:</strong> Think about the consequences of each move and try to avoid moves that will leave you with few options.</li>
+            <li><strong>Keep Your High-Value Tiles Together:</strong> Try to keep your higher-value tiles in one corner to make it easier to combine them.</li>
+            <li><strong>Avoid Filling the Grid:</strong> Always keep at least one empty spot on the grid to ensure you have space for new tiles to spawn.</li>
+        </ul>
+        </div>
+    </div>
+</body>
+</html>

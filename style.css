@@ -1,0 +1,228 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
+
+h1{
+    font-family: "Tiny5", sans-serif;
+    font-size: 50px;
+    font-weight: 100;
+}
+body{
+    font-family: "Tiny5", sans-serif;
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    /* background-color: #fafafa; */
+    background-image: url("./polygon-scatter-haikei\ \(1\).svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.game-container{
+   width: 320px;
+   height: 320px;
+}
+
+button{
+    border-radius: 10px;
+    color: #001829;
+}
+
+.card{
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+    /* margin: auto; */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center ;
+    flex-direction: column;
+    height: 100vh;
+    gap : 10px;
+    border: 2px solid #f4f4f4;
+    padding: 35px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.cell{
+    font-family: 'Poppins', sans-serif;
+    width: 77px;
+    height: 77px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #000;
+    border-radius: 5px;
+}
+
+.score{
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cell[data-value="2"]{
+    background-color: #eee4da;
+}
+
+.cell[data-value="4"]{
+    background-color: #ede0c8;
+}
+
+.cell[data-value="8"]{
+    background-color: #f2b179;
+}
+
+.cell[data-value="16"]{
+    background-color: #f59563;
+}
+
+.cell[data-value="32"]{
+    background-color: #edcc61;
+}
+
+.cell[data-value="64"]{
+    background-color: #edc850;
+}
+
+.cell[data-value="128"]{
+    background-color: #edc53f;
+}
+
+.cell[data-value="256"]{
+    background-color: #edc22e;
+}
+
+.cell[data-value="512"]{
+    background-color: #f67c5f;
+}
+
+.cell[data-value="1024"]{
+    background-color: #f65e3b;
+}
+
+.cell[data-value="2048"]{
+    background-color: #e74c3c;
+}
+
+.cell[data-value="4096"]{
+    background-color: #a9a9a9;
+}
+
+#restart-btn {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #ff6f61;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#restart-btn:hover {
+    background-color: #ff4f41;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#restart-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background: #001829;
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+.grid-cell[data-value]{
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.new-tile{
+    animation: appear 0.3s;
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    background: #FFDA78;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    background: #FFDA78;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.btn span {
+    position: relative;
+    z-index: 1;
+}
