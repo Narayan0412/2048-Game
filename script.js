@@ -164,6 +164,36 @@ document.addEventListener('DOMContentLoaded', () => {
         displayFinalScore(playerScore);
     }
 
+    // Touch event listeners for mobile support
+    let pointerStartX = 0;
+let pointerStartY = 0;
+
+document.addEventListener('pointerdown', event => {
+    pointerStartX = event.clientX;
+    pointerStartY = event.clientY;
+});
+
+document.addEventListener('pointerup', event => {
+    const pointerEndX = event.clientX;
+    const pointerEndY = event.clientY;
+    const deltaX = pointerEndX - pointerStartX;
+    const deltaY = pointerEndY - pointerStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX > 0) {
+            shiftTiles('ArrowRight');
+        } else {
+            shiftTiles('ArrowLeft');
+        }
+    } else {
+        if (deltaY > 0) {
+            shiftTiles('ArrowDown');
+        } else {
+            shiftTiles('ArrowUp');
+        }
+    }
+});
+
     document.addEventListener('keydown', event => {
         if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
             shiftTiles(event.key);
